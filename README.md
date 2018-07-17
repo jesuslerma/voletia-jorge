@@ -1,24 +1,5 @@
-# README
+# Voletia
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Esta es una aplicación sencilla de Rails para crear eventos en la base de datos. Muestra ejemplos básicos de rutas, manejo de acciones en controladores y como escribir en modelos.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Esta aplicación se usa en el Apprenticeship Program de [CeroUno](https://www.cerouno.io).
