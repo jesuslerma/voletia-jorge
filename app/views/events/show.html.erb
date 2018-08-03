@@ -1,3 +1,4 @@
 <h3><%= @event.name %></h3>
 <p><%= @event.description %></p>
 <%= link_to 'Regresar', root_path %>
+<%= link_to 'Destruyete', @event, method: :delete, data: { confirm: 'Are you sure?' } %>
