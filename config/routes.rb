@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   get  '/events/:id/edit', to: 'events#edit', as: :edit_event 
   patch '/events/:id/', to: 'events#update', as: :update_event
   delete '/events/:id', to: 'events#destroy', as: :destroy_event
+
+  get '/login', to: 'users#login', as: :login
   # localhost:3000/events
   # events_path
   # localhost:3000/events/10
