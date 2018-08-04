@@ -1,6 +1,7 @@
 <h1>Voletia</h1>
 <h3>El sitio más cool para registrar eventos. (Made by Guirri)</h3>
 
+<%= link_to 'Sign Out', sign_out_path, method: :delete%>
 <ul>
   <% @events.each do |event| %>
     <li><%= link_to event.name, event_path(event.id) %></li>

@@ -1,10 +1,29 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-
+  skip_before_action :require_login, only: [:new, :create]
   # GET /users
   # GET /users.json
   def index
     @users = User.all
+  end
+
+  def sign_out
+    session.delete(:user_id)
+    redirect_to root_path, notice: 'User successfully signed out'
+  end
+
+  def sign_in
+    user_name = user_params[:name]
+    @user = User.find_by_name(user_name)
+
+    if @user.nil?
+      redirect_to pages_forbidden_path, notice: 'User doesnt exist'
+    elsif @user.password == user_params[:password]
+      session[:user_id] = @user.id
+      redirect_to root_path, notice: 'User successfully sign in'
+    else
+      redirect_to pages_forbidden_path, notice: 'Incorrect password'
+    end
   end
 
   def login

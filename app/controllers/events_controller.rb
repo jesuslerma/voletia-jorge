@@ -1,10 +1,5 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :destroy, :update]
-  before_action :require_login, only: [:create, :destroy, :edit, :update]
-
-  def require_login
-    redirect_to pages_forbidden_path
-  end
 
   def index
     @events = Event.all

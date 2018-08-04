@@ -12,6 +12,10 @@ Rails.application.routes.draw do
   delete '/events/:id', to: 'events#destroy', as: :destroy_event
 
   get '/login', to: 'users#login', as: :login
+
+  post '/sign_in', to: 'users#sign_in', as: :sign_in
+
+  delete '/sign_out', to: 'users#sign_out', as: :sign_out
   # localhost:3000/events
   # events_path
   # localhost:3000/events/10
